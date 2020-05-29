@@ -109,12 +109,18 @@ public class GestorDePrendas {
     }
 
 
-    public void mostrarPrendasDeCategoria(CategoriaDePrenda categoria){
+    public static void mostrarPrendasDeCategoria(CategoriaDePrenda categoria){
         System.out.println("Prendas disponible con categoria:"+categoria);
         //hace un filter de la lista de prendas e imprime las prendas de la categoria deseada
 
+    }
+
+    public static void mostrarPrendasDisponibles(){
+        System.out.println("Prendas disponible con categoria");
+        //Muestra el list Prendas
 
     }
+
 
     public void actualizarBorrador(PrendaBuilder builder){
         borrador = builder;

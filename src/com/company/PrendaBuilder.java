@@ -8,6 +8,7 @@ public class PrendaBuilder {
     TramaDeTela trama = TramaDeTela.LISA;
     ColorDePrenda colorPrimario;
     ColorDePrenda colorSecundario;
+    CondicionClimatica condicionClimatica;
 
     public PrendaBuilder(){
 
@@ -28,6 +29,11 @@ public class PrendaBuilder {
 
     public PrendaBuilder colorSecundario(ColorDePrenda color) {
         this.colorSecundario = color;
+        return this;
+    }
+
+    public PrendaBuilder condicionClimatica(CondicionClimatica cond) {
+        this.condicionClimatica = cond;
         return this;
     }
 

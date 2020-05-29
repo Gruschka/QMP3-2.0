@@ -1,5 +1,4 @@
 package com.company;
-import java.util.Objects;
 
 public class Prenda {
 
@@ -8,7 +7,7 @@ public class Prenda {
     private final TramaDeTela trama;
     private final ColorDePrenda colorPrimario;
     private final ColorDePrenda colorSecundario;
-
+    private final CondicionClimatica condicionClimatica;
 
     Prenda(PrendaBuilder builder) {
         this.tipo = builder.tipo;
@@ -16,10 +15,22 @@ public class Prenda {
         this.trama = builder.trama;
         this.colorPrimario = builder.colorPrimario;
         this.colorSecundario = builder.colorSecundario;
+        this.condicionClimatica = builder.condicionClimatica;
     }
 
-
-    private CategoriaDePrenda categoria() {
+    CategoriaDePrenda categoria() {
         return tipo.categoria();
     }
+
+    public boolean esAdecuadaParaElClimaActual(){
+        float temperaturaActual = Clima.getInstance().temperaturaActual;
+
+        if(temperaturaActual > condicionClimatica.maxTemp || temperaturaActual < condicionClimatica.minTemp ){
+            return false;
+        }
+
+        return true;
+    }
+
+
 }
